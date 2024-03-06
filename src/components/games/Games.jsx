@@ -9,10 +9,6 @@ const Game = ({ game }) => {
 					consectetur adipiscing elit.
 				</p>
 			</div>
-			{/* <div className='button-wrapper'>
-				<button className='btn outline'>DETAILS</button>
-				<button className='btn fill'>BUY NOW</button>
-			</div> */}
 		</div>
 	);
 };
