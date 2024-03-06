@@ -45,7 +45,6 @@ const AsideFilters = ({
 	);
 };
 
-//* Función ordenar: según la opción del select ordeno los juegos
 const handleOrderBy = (event, setOrderBy) => {
 	const selectedValue = event.target.value;
 	setOrderBy(selectedValue);
@@ -61,7 +60,6 @@ const handleGenre = (event, setGenreSelected) => {
 	setGenreSelected(selectedGenre);
 };
 
-//* Función obtener plataformas del array
 const getAllPlatforms = platformsArray => {
 	return platformsArray.map(platform => ({
 		id: v4(),
@@ -70,7 +68,6 @@ const getAllPlatforms = platformsArray => {
 	}));
 };
 
-//* Función obtener géneros de los juegos
 const getAllGenres = genresArray => {
 	return genresArray.map(genre => ({
 		id: v4(),

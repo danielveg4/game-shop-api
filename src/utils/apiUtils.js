@@ -11,10 +11,10 @@ export const fetchGetAllPlatforms = async () => {
     try {
         const response = await fetch(URLS.PLATFORMS);
         const data = await response.json();
-        return data.results; // Devuelve los datos en lugar de establecer los estados
+        return data.results; 
     } catch (error) {
         console.error('Error fetching platforms:', error);
-        throw error; // Propaga el error para manejarlo en el componente que llama a esta función
+        throw error; 
     }
 };
 
@@ -22,10 +22,10 @@ export const fetchGetAllGenres = async () => {
     try {
         const response = await fetch(URLS.GENRES);
         const data = await response.json();
-        return data.results; // Devuelve los datos en lugar de establecer los estados
+        return data.results; 
     } catch (error) {
         console.error('Error fetching genres:', error);
-        throw error; // Propaga el error para manejarlo en el componente que llama a esta función
+        throw error;
     }
 };
 
