@@ -3,7 +3,7 @@ const Game = ({ game }) => {
 		<div>
 			<div>
 				<img src='' alt='' />
-				<h1> {name}</h1>
+				<h1> {game.name}</h1>
 				<p>
 					Lorem ipsum dolor sit amet, <br />
 					consectetur adipiscing elit.
