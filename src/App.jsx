@@ -1,15 +1,46 @@
-import { useFetch } from './hooks/useFetch';
+import AsideFilters from './components/aside-filter/AsideFilters';
+import Header from './components/header/Header';
+import GameList from './components/gamesList/GamesList';
+import useAppLogic from './hooks/useAppLogic';
 
 const App = () => {
-	const { data, loading, error } = useFetch();
+	const {
+		orderBy,
+		setOrderBy,
+		search,
+		genreSelected,
+		platformSelected,
+		setSearch,
+		setGenre,
+		setPlatform,
+		genres,
+		platforms,
+		filteredGames,
+		loading,
+		error
+	} = useAppLogic();
 
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>Error...</div>;
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
 
 	return (
 		<>
-			<p>{data.results[1].games[1].name}</p>
-			<h1>Núcleo de la aplicación</h1>
+			<Header setSearch={setSearch} />
+			<AsideFilters
+				setOrderBy={setOrderBy}
+				platforms={platforms}
+				genres={genres}
+				genreSelected={genreSelected}
+				setGenre={setGenre}
+				platformSelected={platformSelected}
+				setPlatform={setPlatform}
+			/>
+			<GameList games={filteredGames} orderBy={orderBy} search={search} />
 		</>
 	);
 };
